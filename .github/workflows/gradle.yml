@@ -9,7 +9,7 @@ name: Build Gradle Project
 
 on:
   push:
-    branches: [ "main" ] # Assume main is protected; effectively a PR merge
+    branches: [ "jdbc" ] # Assume main is protected; effectively a PR merge
 
 jobs:
   build:
