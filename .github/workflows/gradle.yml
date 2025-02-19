@@ -16,6 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
+    # MySQL
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: mn_playground
+          MYSQL_ROOT_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
     - uses: actions/checkout@v4
 
